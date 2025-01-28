@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/style.css" type="text/css">
+        <title>7Memory.kyvan.co</title>
+        <meta name="apple-mobile-web-app-title" content="7Memory">
+        <link rel="shortcut icon" href="/assets/favicon.png" type="image/png">
+        <link rel="apple-touch-icon" href="/assets/icon.png">
+    </head>
+    <body>
+    <header class="header level is-vcentered">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item is-size-3 is-capitalized has-text-weight-bold" href="#">7Memory</a>
+            </div>
+            {# <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a> #}
+            <div id="mainMenu" class="navbar-menu">
+            </div>
+            <div class="navbar-end">
+                {% if context.gridSize != null %}
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-danger is-small" href="/">Restart</a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+    {% if context.gridSize != null %}
+        {{ include('views/game.twig') }}
+    {% else %}
+        {{ include('views/start.twig') }}
+    {% endif %}
+    </body>
+    <footer>
+        <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="/script.js"></script>
+    </footer>
+</html>

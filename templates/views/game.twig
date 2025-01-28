@@ -1,0 +1,11 @@
+<section class="section">
+    <div id="gameBoard" class="fixed-grid has-{{ context.gridSize }}-cols is-centered">
+        <div class="grid">
+            {% for emoji in context.emojis %}
+                <div class="cell">
+                    {{ include('components/card.twig') }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
